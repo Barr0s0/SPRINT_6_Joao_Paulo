@@ -1,0 +1,28 @@
+{
+    "user_valido":{
+        "nome":"james bond",
+        "email":"jamesman@gmail.com.br",
+        "password":"teste123",
+        "administrador":"true"
+    },
+
+    "user_invalido":{
+        "nome":"invalido Tester",
+        "email":"fulano@qa.com",
+        "password":"teste",
+        "administrador":"true"
+    },
+
+    "user_sem_senha":{
+        "nome":"Arnold Scwarz",
+        "email":"fusdasd@gmail.com",
+        "password":"",
+        "administrador":"true"
+    },
+    "user_sem_email":{
+        "nome":"joshua hard",
+        "email":"",
+        "password":"teste123",
+        "administrador":"true"
+    }
+}
