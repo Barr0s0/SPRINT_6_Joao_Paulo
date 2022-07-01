@@ -1,5 +1,6 @@
 * Settings *
 Documentation               Keywords e Variaveis para ações do endpoint de produtos
+Resource                    ../support/principal.robot
 
 * Keywords *
 GET Buscar Produto 

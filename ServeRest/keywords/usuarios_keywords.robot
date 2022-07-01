@@ -1,6 +1,6 @@
 * Settings *
 Documentation               Keywords e Variaveis para ações do endpoint de usuarios
-Resource                    ./common.robot
+Resource                    ../support/principal.robot
 
 * Variables *
 ${nome_do_usuario}          joaooo paulo da costa barroso
@@ -22,8 +22,7 @@ GET Buscar Usuario
     Set Global Variable     ${response}
 
 POST Endpoint /usuarios
-    &{payload}              Create Dictionary   nome=joseliss pauloo barrosooo   email=joao.barros@qa.com.br   password=testejoao12   administrador=true
-    ${response}             POST on Session             serverest       /usuarios          data=&{payload}
+    ${response}             POST on Session             serverest       /usuarios          json=&{payload}
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
@@ -53,3 +52,8 @@ Criar Usuario Estatico Valido
     
 Validar Ter Criado Usuario
     Should Not Be Empty         ${response.json()["_id"]}
+
+Cadastrar Usuario Dinamico Valido
+    ${payload}              Criar Dados Usuario Valido
+    Set Global Variable     ${payload}
+    POST Endpoint /usuarios

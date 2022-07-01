@@ -1,7 +1,7 @@
 * Settings *
 Documentation               Keywords e Variaveis para ações do endpoint carrinho
+Resource                    ../support/principal.robot
 
-Resource                    ./common.robot
 
 * Variables *
 
