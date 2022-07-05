@@ -7,6 +7,9 @@ Validar Status Code "${statuscode}"
 
     Should Be True      ${response.status_code} == ${statuscode}
 
+Validar Se Mensagem Contem "${palavra}"
+    Should Contain          ${response.json()["message"]}       ${palavra}
+
 Importar JSON Estatico
     [Arguments]         ${nome_arquivo}
     ${arquivo}          Get File            ${EXECDIR}/${nome_arquivo}
