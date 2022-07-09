@@ -1,7 +1,7 @@
 * Settings *
 Documentation       Arquivo de Testes para Endpoint /usuarios
 
-Resource            ../keywords/usuario_keywords.robot
+Resource            ../keywords/usuarios_keywords.robot
 
 Suite Setup         Criar Sessao
 
@@ -11,7 +11,6 @@ Cenario: GET todos os usuarios 200
     [tags]      GET
     GET Endpoint/usuarios
     Validar Status Code "200"
-    Validar Quantidade "${3}"
 
 Cenario: GET Buscar Usuario Por ID
     [tags]      GETBUSCARID
@@ -20,6 +19,7 @@ Cenario: GET Buscar Usuario Por ID
 
 Cenario: POST Cadastrar Usuario 201
     [tags]      POST
+    Criar Dados Usuario Valido
     POST Endpoint /usuarios
     Validar Status Code "201"
     Validar Se Mensagem Contem "sucesso"
