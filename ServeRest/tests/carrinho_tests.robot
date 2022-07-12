@@ -2,6 +2,7 @@
 Documentation       Arquivo de Testes para Endpoint /carrinhos
 
 Resource            ../keywords/carrinho_keywords.robot
+Resource            ../keywords/login_keywords.robot
 
 Suite Setup         Criar Sessao
 
@@ -28,9 +29,8 @@ Cenario: DELETE Compra Concluida
     DELETE Endpoint /carrinhos/concluir-compra
     Validar Status Code "200"
 
-#Cenario: POST Criar Carrinho
-#    [tags]          POSTCRIARCARRINHO
-#    Criar Sessao
-#    Fazer Login e Armazenar Token
-#    POST Endpoint /carrinhos
-#    Validar Status Code "201"
+Cenario: POST Criar Carrinho
+    [tags]          POSTCRIARCARRINHO
+    Fazer Login e Armazenar Token
+    POST Endpoint /carrinhos
+    Validar Status Code "201"

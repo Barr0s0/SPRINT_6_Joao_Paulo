@@ -16,14 +16,12 @@ GET Endpoint /produtos
 
 POST Endpoint /produtos
     &{header}                   Create Dictionary       Authorization=${token_auth}
-    &{payload}                  Create Dictionary       nome=camisa    preco=100      descricao=brasil       quantidade=2
-    ${response}                 POST on Session         serverest       /produtos      data=&{payload}       headers=${header}
+    ${response}                 POST on Session         serverest       /produtos      json=&{payload}       headers=${header}
     Log to Console              Response: ${response.content}
     Set Global Variable         ${response}
 PUT Endpoint /produtos
     &{header}                   Create Dictionary       Authorization=${token_auth}
-    &{payload}                  Create Dictionary       nome=camisa    preco=100      descricao=brasil       quantidade=2
-    ${response}                 PUT on Session         serverest       /produtos/UBfNnf3hOOtMZxaD      data=&{payload}       headers=${header}
+    ${response}                 PUT on Session         serverest       /produtos/${id_produto}      json=&{payload}       headers=${header}
     Log to Console              Response: ${response.content}
     Set Global Variable         ${response}
 
@@ -38,6 +36,7 @@ Validar Ter Criado Produto
     Should Not Be Empty         ${response.json()["_id"]}
 
 Criar Um Produto e Armazenar ID
+    Gerar Produto
     POST Endpoint /produtos
     Validar Ter Criado Produto
     ${id_produto}                   Set Variable         ${response.json()["_id"]}

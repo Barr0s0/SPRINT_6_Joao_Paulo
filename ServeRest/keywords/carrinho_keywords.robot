@@ -3,7 +3,6 @@ Documentation               Keywords e Variaveis para ações do endpoint carrin
 Resource                    ../support/principal.robot
 
 
-* Variables *
 
 * Keywords *
 GET Endpoint /carrinhos
@@ -19,7 +18,7 @@ GET Buscar Carrinho Por ID
 POST Endpoint /carrinhos
     Criando Carrinho
     &{header}               Create Dictionary           Authorization=${token_auth}         Content-Type=application/json
-    ${response}             POST on Session      serverest       /carrinhos     json=&{payload}      headers=${header}
+    ${response}             POST on Session      serverest       /carrinhos     json=&{payload}      headers=${header}      expected_status=any
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
@@ -30,7 +29,7 @@ DELETE Endpoint /carrinhos/cancelar-compra
     Set Global Variable     ${response}
 
 DELETE Endpoint /carrinhos/concluir-compra
-    &{header}           Create Dictionary           Authorization=${token_auth}         Content-Type=application/json
+    &{header}               Create Dictionary           Authorization=${token_auth}         Content-Type=application/json
     ${response}             DELETE on Session      serverest       /carrinhos/concluir-compra      headers=${header}
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}

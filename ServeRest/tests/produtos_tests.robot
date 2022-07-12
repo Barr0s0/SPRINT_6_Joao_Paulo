@@ -2,6 +2,7 @@
 Documentation       Arquivo de Testes para Endpoint /produtos
 
 Resource            ../keywords/produtos_keywords.robot
+Resource            ../keywords/login_keywords.robot
 
 Suite Setup         Criar Sessao
 
@@ -16,12 +17,11 @@ Cenario: GET Buscar Produto
     [tags]      BUSCARPRODUTOS
     GET Endpoint /produtos
     Validar Status Code "200"
-    Validar Quantidade "${2}"
 
 Cenario: POST Criar Produto 201
     [tags]      POSTPRODUTO
     Fazer Login e Armazenar Token
-    POST Endpoint /produtos
+    Criar Um Produto e Armazenar ID
     Validar Status Code "201"
 
 Cenario: PUT Atualizar Produto
