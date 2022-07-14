@@ -1,810 +1,633 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220713 22:24:35.430" rpa="false" schemaversion="3">
-<suite id="s1" name="Usuario Tests" source="C:\Users\joao_\Documents\SPRINT_6\SPRINT_6_Joao_Paulo\ServeRest\tests\usuario_tests.robot">
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220714 03:48:57.293" rpa="false" schemaversion="3">
+<suite id="s1" name="Carrinho Tests" source="C:\Users\joao_\Documents\SPRINT_6\SPRINT_6_Joao_Paulo\ServeRest\tests\carrinho_tests.robot">
 <kw name="Criar Sessao" library="principal" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>serverest</arg>
 <arg>${BASE_URI}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220713 22:24:36.304" level="INFO">Creating Session using : alias=serverest, url=http://localhost:3000/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220713 22:24:36.303" endtime="20220713 22:24:36.304"/>
+<msg timestamp="20220714 03:48:58.310" level="INFO">Creating Session using : alias=serverest, url=http://localhost:3000/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220714 03:48:58.309" endtime="20220714 03:48:58.310"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.303" endtime="20220713 22:24:36.304"/>
+<status status="PASS" starttime="20220714 03:48:58.309" endtime="20220714 03:48:58.310"/>
 </kw>
-<test id="s1-t1" name="Cenario: GET todos os usuarios 200" line="10">
-<kw name="GET Endpoint /usuarios" library="usuarios_keywords">
+<test id="s1-t1" name="Cenario: GET Buscar carrinhos" line="11">
+<kw name="GET Endpoint /carrinhos" library="carrinho_keywords">
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>serverest</arg>
-<arg>/usuarios</arg>
+<arg>/carrinhos</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220713 22:24:36.326" level="INFO">GET Request : url=http://localhost:3000/usuarios 
- path_url=/usuarios 
+<msg timestamp="20220714 03:48:58.339" level="INFO">GET Request : url=http://localhost:3000/carrinhos 
+ path_url=/carrinhos 
  headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220713 22:24:36.326" level="INFO">GET Response : url=http://localhost:3000/usuarios 
+<msg timestamp="20220714 03:48:58.339" level="INFO">GET Response : url=http://localhost:3000/carrinhos 
  status=200, reason=OK 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'b5a22eb7-a51b-4137-82e2-2dc843ba7e56', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '4593', 'Date': 'Thu, 14 Jul 2022 01:24:36 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '000bd9a1-358c-434a-8ba1-572e3ce0a0fd', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1142', 'Date': 'Thu, 14 Jul 2022 06:48:58 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={
-    "quantidade": 21,
-    "usuarios": [
+    "quantidade": 2,
+    "carrinhos": [
         {
-            "nome": "Fulano da Silva",
-            "email": "fulano@qa.com",
-            "password": "teste",
-            "administrador": "true",
-            "_id": "0uxuPY0cbmQhpEz1"
+            "produtos": [
+                {
+                    "idProduto": "K6leHdftCeOJj8BJ",
+                    "quantidade": 1,
+                    "precoUnitario": 5240
+                },
+                {
+                    "idProduto": "BeeJh5lz3k6kSIzA",
+                    "quantidade": 2,
+                    "precoUnitario": 470
+                }
+            ],
+            "precoTotal": 6180,
+            "quantidadeTotal": 3,
+            "idUsuario": "0uxuPY0cbmQhpEz1",
+            "_id": "cHhwmtEkTwL2be0c"
         },
         {
-            "nome": "BARROSOo",
-            "email": "BARROSOo@gmail.com.br",
-            "password": "teste123456",
-            "administrador": "true",
-            "_id": "5ReOuNxa63MiCQFQ"
-        },
-        {
-            "nome": "Jared Brooks",
-            "email": "peggy73@example.net",
-            "password": "senha123",
-            "administrador": "true",
-            "_id": "6xXGg6W5uiBBqbzi"
-        },
-        {
-            "nome": "Ethan Andersen",
-            "email": "pvaldez@example.com",
-            "password": "senha123",
-            "administrador": "true",
-            "_id": "7B8ijwcxgoHimWbC"
-        },
-        {
-            "nome": "William Odonnell",
-            "email": "olittle@example.com",
-            "password": "senha123",
-            "administrador": "true",
-            "_id": "7bv8xvtI2uyGoQXo"
-        },
-        {
-            "nome": "Amber Wiley DVM",
-            "email": "sherry62@example.net",
-            "password": "senha123",
-            "administrador": "true",
-            "_id": "7d1K7S3Rnz0qEI0N"
-        },
-        {
-            "nome": "Jesse Houston",
-            "email": "cruzdon@example.net",
-            "password": "4$IUqMLj_7",
-            "administrador": "true",
-            "_id": "9lKNvIfX3DoUZYJj"
-        },
-        {
-            "nome": "Christopher Mullen",
-            "email": "benjamin97@example.com",
-            "password": "senha123",
-            "administrador": "true",
-            "_id": "9qi09gWN0dqS879X"
-        },
-        {
-            "nome": "Theresa Burns",
-            "email": "madelinedavila@example.org",
-            "password": "0#7Le@vmIQ",
-            "administrador": "true",
-            "_id": "DwoWDnuSDpEvqBiz"
-        },
-        {
-            "nome": "Brooke Joseph",
-            "email": "phamdaniel@example.com",
-            "password": "Ac8CiMAgv(",
-            "administrador": "true",
-            "_id": "GBq1uaLS6dZBkpa8"
-        },
-        {
-            "nome": "Jasmine Fitzpatrick",
-            "email": "antoniooliver@example.org",
-            "password": "senha123",
-            "administrador": "true",
-            "_id": "IIugUeyrH4DMiypv"
-        },
-        {
-            "nome": "Scott Ruiz",
-            "email": "maurice16@example.net",
-            "password": "lw6Ur8o%(0",
-            "administrador": "true",
-            "_id": "OVEZ1uZ1YhyJSMLI"
-        },
-        {
-            "nome": "Michael Cox",
-            "email": "ncarter@example.net",
-            "password": "VBW!4aQuvi",
-            "administrador": "true",
-            "_id": "RjXrgiPpJdikZjMZ"
-        },
-        {
-            "nome": "Tyler Henry",
-            "email": "floresjessica@example.org",
-            "password": "senha123",
-            "administrador": "true",
-            "_id": "Tmn4oAEndts3GJKv"
-        },
-        {
-            "nome": "BARROSO",
-            "email": "BARROSO@gmail.com.br",
-            "password": "teste123456",
-            "administrador": "true",
-            "_id": "UXkfQmVNHMrmXcq3"
-        },
-        {
-            "nome": "Stephen Craig",
-            "email": "kristinparker@example.com",
-            "password": "senha123",
-            "administrador": "true",
-            "_id": "X4Myw7oflS1cLnJa"
-        },
-        {
-            "nome": "Mr. Charles Ramos",
-            "email": "walshdonna@example.org",
-            "password": "Czu8NTQHk!",
-            "administrador": "true",
-            "_id": "fGYJrRp1kcHYsPHj"
-        },
-        {
-            "nome": "Brittany Nelson",
-            "email": "powelltara@example.net",
-            "password": "senha123",
-            "administrador": "true",
-            "_id": "q5CqSqq4MRHvmi6B"
-        },
-        {
-            "nome": "Amanda Shaw",
-            "email": "kaylahall@example.net",
-            "password": "m+iNQpPj^4",
-            "administrador": "true",
-            "_id": "s7IFurb2xkL38Mjv"
-        },
-        {
-            "nome": "Mariah Stewart",
-            "email": "allen09@example.org",
-            "password": ")Ra8%WIuKH",
-            "administrador": "true",
-            "_id": "w5g9QxzWwx6B3R80"
-        },
-        {
-            "nome": "Kevin Norman",
-            "email": "michelechambers@example.com",
-            "password": "Jxz3rPGs_@",
-            "administrador": "true",
-            "_id": "zIhOE5oSPjfTliAU"
+            "produtos": [
+                {
+                    "idProduto": "BeeJh5lz3k6kSIzA",
+                    "quantidade": 2,
+                    "precoUnitario": 470
+                },
+                {
+                    "idProduto": "K6leHdftCeOJj8BJ",
+                    "quantidade": 1,
+                    "precoUnitario": 5240
+                }
+            ],
+            "precoTotal": 6180,
+            "quantidadeTotal": 3,
+            "idUsuario": "oUb7aGkMtSEPf6BZ",
+            "_id": "qbMqntef4iTOwWfg"
         }
     ]
 } 
  </msg>
-<msg timestamp="20220713 22:24:36.327" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.307" endtime="20220713 22:24:36.327"/>
+<msg timestamp="20220714 03:48:58.339" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.312" endtime="20220714 03:48:58.339"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 03:48:58.340" endtime="20220714 03:48:58.347"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.328" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.327" endtime="20220713 22:24:36.328"/>
+<msg timestamp="20220714 03:48:58.348" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.348" endtime="20220714 03:48:58.349"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.307" endtime="20220713 22:24:36.328"/>
+<status status="PASS" starttime="20220714 03:48:58.311" endtime="20220714 03:48:58.349"/>
 </kw>
 <kw name="Validar Status Code &quot;200&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
 <kw name="Should Be True" library="BuiltIn">
 <arg>${response.status_code} == ${statuscode}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20220713 22:24:36.329" endtime="20220713 22:24:36.330"/>
+<status status="PASS" starttime="20220714 03:48:58.350" endtime="20220714 03:48:58.351"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.328" endtime="20220713 22:24:36.330"/>
+<status status="PASS" starttime="20220714 03:48:58.350" endtime="20220714 03:48:58.352"/>
 </kw>
-<tag>GET</tag>
-<status status="PASS" starttime="20220713 22:24:36.305" endtime="20220713 22:24:36.331"/>
+<tag>BUSCARCARRINHO</tag>
+<status status="PASS" starttime="20220714 03:48:58.310" endtime="20220714 03:48:58.354"/>
 </test>
-<test id="s1-t2" name="Cenario: GET Buscar Usuario Por ID" line="15">
-<kw name="GET Buscar Usuario" library="usuarios_keywords">
+<test id="s1-t2" name="Cenario: GET Buscar Carrinho Por Id" line="15">
+<kw name="GET Buscar Carrinho Por ID" library="carrinho_keywords">
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>serverest</arg>
-<arg>/usuarios/0uxuPY0cbmQhpEz1</arg>
+<arg>/carrinhos/qbMqntef4iTOwWfg</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20220713 22:24:36.350" level="INFO">GET Request : url=http://localhost:3000/usuarios/0uxuPY0cbmQhpEz1 
- path_url=/usuarios/0uxuPY0cbmQhpEz1 
+<msg timestamp="20220714 03:48:58.369" level="INFO">GET Request : url=http://localhost:3000/carrinhos/qbMqntef4iTOwWfg 
+ path_url=/carrinhos/qbMqntef4iTOwWfg 
  headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220713 22:24:36.350" level="INFO">GET Response : url=http://localhost:3000/usuarios/0uxuPY0cbmQhpEz1 
+<msg timestamp="20220714 03:48:58.371" level="INFO">GET Response : url=http://localhost:3000/carrinhos/qbMqntef4iTOwWfg 
  status=200, reason=OK 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '97363711-2863-4259-a011-8cf63911e35d', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '148', 'Date': 'Thu, 14 Jul 2022 01:24:36 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'bcd98548-e717-4655-bd86-7589c57a6d5e', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '401', 'Date': 'Thu, 14 Jul 2022 06:48:58 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={
-    "nome": "Fulano da Silva",
-    "email": "fulano@qa.com",
-    "password": "teste",
-    "administrador": "true",
-    "_id": "0uxuPY0cbmQhpEz1"
+    "produtos": [
+        {
+            "idProduto": "BeeJh5lz3k6kSIzA",
+            "quantidade": 2,
+            "precoUnitario": 470
+        },
+        {
+            "idProduto": "K6leHdftCeOJj8BJ",
+            "quantidade": 1,
+            "precoUnitario": 5240
+        }
+    ],
+    "precoTotal": 6180,
+    "quantidadeTotal": 3,
+    "idUsuario": "oUb7aGkMtSEPf6BZ",
+    "_id": "qbMqntef4iTOwWfg"
 } 
  </msg>
-<msg timestamp="20220713 22:24:36.350" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.336" endtime="20220713 22:24:36.350"/>
+<msg timestamp="20220714 03:48:58.371" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.357" endtime="20220714 03:48:58.371"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 03:48:58.371" endtime="20220714 03:48:58.374"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220714 03:48:58.375" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.374" endtime="20220714 03:48:58.375"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.356" endtime="20220714 03:48:58.376"/>
+</kw>
+<kw name="Validar Status Code &quot;200&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${statuscode}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220714 03:48:58.377" endtime="20220714 03:48:58.380"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.376" endtime="20220714 03:48:58.380"/>
+</kw>
+<tag>BUSCARID</tag>
+<status status="PASS" starttime="20220714 03:48:58.355" endtime="20220714 03:48:58.381"/>
+</test>
+<test id="s1-t3" name="Cenario: DELETE Excluir Carrinho" line="20">
+<kw name="Fazer Login e Armazenar Token" library="login_keywords">
+<kw name="POST Endpoint /login" library="login_keywords">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{payload}</var>
+<arg>email=${email_para_login}</arg>
+<arg>password=${password_para_login}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220714 03:48:58.385" level="INFO">&amp;{payload} = { email=fulano@qa.com | password=teste }</msg>
+<status status="PASS" starttime="20220714 03:48:58.385" endtime="20220714 03:48:58.385"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/login</arg>
+<arg>data=&amp;{payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220714 03:48:58.405" level="INFO">POST Request : url=http://localhost:3000/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '36', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=email=fulano%40qa.com&amp;password=teste 
+ </msg>
+<msg timestamp="20220714 03:48:58.405" level="INFO">POST Response : url=http://localhost:3000/login 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'a5ff7bff-8f26-4f09-8cf2-9c8be10c1993', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '265', 'Date': 'Thu, 14 Jul 2022 06:48:58 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+    "message": "Login realizado com sucesso",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E"
+} 
+ </msg>
+<msg timestamp="20220714 03:48:58.406" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.385" endtime="20220714 03:48:58.406"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 03:48:58.406" endtime="20220714 03:48:58.414"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220714 03:48:58.416" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.414" endtime="20220714 03:48:58.416"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.384" endtime="20220714 03:48:58.416"/>
+</kw>
+<kw name="Validar Ter Logado" library="login_keywords">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response.json()["message"]}</arg>
+<arg>Login realizado com sucesso</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220714 03:48:58.417" endtime="20220714 03:48:58.418"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${response.json()["authorization"]}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220714 03:48:58.419" level="INFO">Length is 192</msg>
+<status status="PASS" starttime="20220714 03:48:58.418" endtime="20220714 03:48:58.419"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.417" endtime="20220714 03:48:58.419"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${id_usuario}</var>
-<arg>${response.json()["_id"]}</arg>
+<var>${token_auth}</var>
+<arg>${response.json()["authorization"]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220713 22:24:36.352" level="INFO">${id_usuario} = 0uxuPY0cbmQhpEz1</msg>
-<status status="PASS" starttime="20220713 22:24:36.350" endtime="20220713 22:24:36.352"/>
+<msg timestamp="20220714 03:48:58.420" level="INFO">${token_auth} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E</msg>
+<status status="PASS" starttime="20220714 03:48:58.419" endtime="20220714 03:48:58.420"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response.content}</arg>
+<arg>Token Salvo:${token_auth}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.352" endtime="20220713 22:24:36.356"/>
+<status status="PASS" starttime="20220714 03:48:58.420" endtime="20220714 03:48:58.421"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
+<arg>${token_auth}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.358" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.356" endtime="20220713 22:24:36.358"/>
+<msg timestamp="20220714 03:48:58.422" level="INFO">${token_auth} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E</msg>
+<status status="PASS" starttime="20220714 03:48:58.421" endtime="20220714 03:48:58.422"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.335" endtime="20220713 22:24:36.361"/>
+<status status="PASS" starttime="20220714 03:48:58.384" endtime="20220714 03:48:58.422"/>
 </kw>
-<kw name="Validar Status Code &quot;200&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
-<kw name="Should Be True" library="BuiltIn">
-<arg>${response.status_code} == ${statuscode}</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20220713 22:24:36.395" endtime="20220713 22:24:36.397"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.394" endtime="20220713 22:24:36.397"/>
-</kw>
-<tag>GETBUSCARID</tag>
-<status status="PASS" starttime="20220713 22:24:36.334" endtime="20220713 22:24:36.402"/>
-</test>
-<test id="s1-t3" name="Cenario: POST Cadastrar Usuario 201" line="20">
-<kw name="Criar Dados Usuario Valido" library="dynamic">
-<kw name="Name" library="FakerLibrary">
-<var>${nome}</var>
-<doc>:example 'John Doe'</doc>
-<msg timestamp="20220713 22:24:36.428" level="INFO">${nome} = Margaret Mccoy</msg>
-<status status="PASS" starttime="20220713 22:24:36.406" endtime="20220713 22:24:36.429"/>
-</kw>
-<kw name="Email" library="FakerLibrary">
-<var>${email}</var>
-<msg timestamp="20220713 22:24:36.431" level="INFO">${email} = joseph74@example.net</msg>
-<status status="PASS" starttime="20220713 22:24:36.429" endtime="20220713 22:24:36.432"/>
-</kw>
-<kw name="Password" library="FakerLibrary">
-<var>${senha}</var>
-<doc>Generate a random password of the specified ``length``.</doc>
-<msg timestamp="20220713 22:24:36.432" level="INFO">${senha} = 8hK7PRsz+e</msg>
-<status status="PASS" starttime="20220713 22:24:36.432" endtime="20220713 22:24:36.432"/>
-</kw>
+<kw name="DELETE Endpoint /carrinhos/cancelar-compra" library="carrinho_keywords">
 <kw name="Create Dictionary" library="BuiltIn">
-<var>${payload}</var>
-<arg>nome=${nome}</arg>
-<arg>email=${email}</arg>
-<arg>password=${senha}</arg>
-<arg>administrador=true</arg>
+<var>&amp;{header}</var>
+<arg>Authorization=${token_auth}</arg>
+<arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220713 22:24:36.433" level="INFO">${payload} = {'nome': 'Margaret Mccoy', 'email': 'joseph74@example.net', 'password': '8hK7PRsz+e', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.432" endtime="20220713 22:24:36.433"/>
+<msg timestamp="20220714 03:48:58.423" level="INFO">&amp;{header} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfI...</msg>
+<status status="PASS" starttime="20220714 03:48:58.423" endtime="20220714 03:48:58.423"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.433" endtime="20220713 22:24:36.437"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.438" level="INFO">${payload} = {'nome': 'Margaret Mccoy', 'email': 'joseph74@example.net', 'password': '8hK7PRsz+e', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.437" endtime="20220713 22:24:36.438"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.405" endtime="20220713 22:24:36.438"/>
-</kw>
-<kw name="POST Endpoint /usuarios" library="usuarios_keywords">
-<kw name="POST On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>serverest</arg>
-<arg>/usuarios</arg>
-<arg>json=&amp;{payload}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220713 22:24:36.454" level="INFO">POST Request : url=http://localhost:3000/usuarios 
- path_url=/usuarios 
- headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '110', 'Content-Type': 'application/json'} 
- body=b'{"nome": "Margaret Mccoy", "email": "joseph74@example.net", "password": "8hK7PRsz+e", "administrador": "true"}' 
- </msg>
-<msg timestamp="20220713 22:24:36.454" level="INFO">POST Response : url=http://localhost:3000/usuarios 
- status=201, reason=Created 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '7f9f12a2-3128-4136-a3c6-56b4f935b230', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Date': 'Thu, 14 Jul 2022 01:24:36 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={
-    "message": "Cadastro realizado com sucesso",
-    "_id": "wjYdqJxgQPME0OfQ"
-} 
- </msg>
-<msg timestamp="20220713 22:24:36.454" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.441" endtime="20220713 22:24:36.454"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.455" endtime="20220713 22:24:36.457"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.459" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.458" endtime="20220713 22:24:36.459"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.440" endtime="20220713 22:24:36.459"/>
-</kw>
-<kw name="Validar Status Code &quot;201&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
-<kw name="Should Be True" library="BuiltIn">
-<arg>${response.status_code} == ${statuscode}</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20220713 22:24:36.462" endtime="20220713 22:24:36.466"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.460" endtime="20220713 22:24:36.466"/>
-</kw>
-<kw name="Validar Se Mensagem Contem &quot;sucesso&quot;" library="common" sourcename="Validar Se Mensagem Contem &quot;${palavra}&quot;">
-<kw name="Should Contain" library="BuiltIn">
-<arg>${response.json()["message"]}</arg>
-<arg>${palavra}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220713 22:24:36.468" endtime="20220713 22:24:36.469"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.467" endtime="20220713 22:24:36.469"/>
-</kw>
-<tag>POST</tag>
-<status status="PASS" starttime="20220713 22:24:36.404" endtime="20220713 22:24:36.470"/>
-</test>
-<test id="s1-t4" name="Cenario: PUT Atualizar Usuario 201" line="27">
-<kw name="Criar Dados Usuario Valido" library="dynamic">
-<kw name="Name" library="FakerLibrary">
-<var>${nome}</var>
-<doc>:example 'John Doe'</doc>
-<msg timestamp="20220713 22:24:36.474" level="INFO">${nome} = Ariel Adams</msg>
-<status status="PASS" starttime="20220713 22:24:36.473" endtime="20220713 22:24:36.474"/>
-</kw>
-<kw name="Email" library="FakerLibrary">
-<var>${email}</var>
-<msg timestamp="20220713 22:24:36.477" level="INFO">${email} = qle@example.org</msg>
-<status status="PASS" starttime="20220713 22:24:36.477" endtime="20220713 22:24:36.477"/>
-</kw>
-<kw name="Password" library="FakerLibrary">
-<var>${senha}</var>
-<doc>Generate a random password of the specified ``length``.</doc>
-<msg timestamp="20220713 22:24:36.477" level="INFO">${senha} = o16RPwoT#M</msg>
-<status status="PASS" starttime="20220713 22:24:36.477" endtime="20220713 22:24:36.477"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${payload}</var>
-<arg>nome=${nome}</arg>
-<arg>email=${email}</arg>
-<arg>password=${senha}</arg>
-<arg>administrador=true</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220713 22:24:36.479" level="INFO">${payload} = {'nome': 'Ariel Adams', 'email': 'qle@example.org', 'password': 'o16RPwoT#M', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.479" endtime="20220713 22:24:36.479"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.479" endtime="20220713 22:24:36.480"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.481" level="INFO">${payload} = {'nome': 'Ariel Adams', 'email': 'qle@example.org', 'password': 'o16RPwoT#M', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.480" endtime="20220713 22:24:36.481"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.472" endtime="20220713 22:24:36.482"/>
-</kw>
-<kw name="POST Endpoint /usuarios" library="usuarios_keywords">
-<kw name="POST On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>serverest</arg>
-<arg>/usuarios</arg>
-<arg>json=&amp;{payload}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220713 22:24:36.512" level="INFO">POST Request : url=http://localhost:3000/usuarios 
- path_url=/usuarios 
- headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '102', 'Content-Type': 'application/json'} 
- body=b'{"nome": "Ariel Adams", "email": "qle@example.org", "password": "o16RPwoT#M", "administrador": "true"}' 
- </msg>
-<msg timestamp="20220713 22:24:36.512" level="INFO">POST Response : url=http://localhost:3000/usuarios 
- status=201, reason=Created 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'eb451daf-cce8-4c5e-b988-9b9cd50d5a0e', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Date': 'Thu, 14 Jul 2022 01:24:36 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={
-    "message": "Cadastro realizado com sucesso",
-    "_id": "gfgSxsTjn8ENWJkN"
-} 
- </msg>
-<msg timestamp="20220713 22:24:36.512" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.483" endtime="20220713 22:24:36.512"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.513" endtime="20220713 22:24:36.518"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.521" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.520" endtime="20220713 22:24:36.521"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.482" endtime="20220713 22:24:36.521"/>
-</kw>
-<kw name="PUT Endpoint /usuarios" library="usuarios_keywords">
-<kw name="PUT On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>serverest</arg>
-<arg>/usuarios/${response.json()["_id"]}</arg>
-<arg>json=&amp;{payload}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20220713 22:24:36.541" level="INFO">PUT Request : url=http://localhost:3000/usuarios/gfgSxsTjn8ENWJkN 
- path_url=/usuarios/gfgSxsTjn8ENWJkN 
- headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '102', 'Content-Type': 'application/json'} 
- body=b'{"nome": "Ariel Adams", "email": "qle@example.org", "password": "o16RPwoT#M", "administrador": "true"}' 
- </msg>
-<msg timestamp="20220713 22:24:36.541" level="INFO">PUT Response : url=http://localhost:3000/usuarios/gfgSxsTjn8ENWJkN 
- status=200, reason=OK 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'a150715e-d9ea-44b0-ba6d-bda67aab1871', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '50', 'Date': 'Thu, 14 Jul 2022 01:24:36 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={
-    "message": "Registro alterado com sucesso"
-} 
- </msg>
-<msg timestamp="20220713 22:24:36.541" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.523" endtime="20220713 22:24:36.542"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.542" endtime="20220713 22:24:36.543"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.544" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.544" endtime="20220713 22:24:36.545"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.522" endtime="20220713 22:24:36.545"/>
-</kw>
-<kw name="Validar Status Code &quot;200&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
-<kw name="Should Be True" library="BuiltIn">
-<arg>${response.status_code} == ${statuscode}</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20220713 22:24:36.547" endtime="20220713 22:24:36.549"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.546" endtime="20220713 22:24:36.549"/>
-</kw>
-<tag>PUT</tag>
-<status status="PASS" starttime="20220713 22:24:36.471" endtime="20220713 22:24:36.549"/>
-</test>
-<test id="s1-t5" name="Cenario: DELETE Deletar Usuario 200" line="34">
-<kw name="Criar Dados Usuario Valido" library="dynamic">
-<kw name="Name" library="FakerLibrary">
-<var>${nome}</var>
-<doc>:example 'John Doe'</doc>
-<msg timestamp="20220713 22:24:36.554" level="INFO">${nome} = Eileen Mann</msg>
-<status status="PASS" starttime="20220713 22:24:36.553" endtime="20220713 22:24:36.554"/>
-</kw>
-<kw name="Email" library="FakerLibrary">
-<var>${email}</var>
-<msg timestamp="20220713 22:24:36.557" level="INFO">${email} = aliciacarroll@example.net</msg>
-<status status="PASS" starttime="20220713 22:24:36.555" endtime="20220713 22:24:36.557"/>
-</kw>
-<kw name="Password" library="FakerLibrary">
-<var>${senha}</var>
-<doc>Generate a random password of the specified ``length``.</doc>
-<msg timestamp="20220713 22:24:36.558" level="INFO">${senha} = 4(0@(RwJzd</msg>
-<status status="PASS" starttime="20220713 22:24:36.557" endtime="20220713 22:24:36.558"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${payload}</var>
-<arg>nome=${nome}</arg>
-<arg>email=${email}</arg>
-<arg>password=${senha}</arg>
-<arg>administrador=true</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220713 22:24:36.558" level="INFO">${payload} = {'nome': 'Eileen Mann', 'email': 'aliciacarroll@example.net', 'password': '4(0@(RwJzd', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.558" endtime="20220713 22:24:36.558"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.559" endtime="20220713 22:24:36.560"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.560" level="INFO">${payload} = {'nome': 'Eileen Mann', 'email': 'aliciacarroll@example.net', 'password': '4(0@(RwJzd', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.560" endtime="20220713 22:24:36.560"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.552" endtime="20220713 22:24:36.561"/>
-</kw>
-<kw name="POST Endpoint /usuarios" library="usuarios_keywords">
-<kw name="POST On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>serverest</arg>
-<arg>/usuarios</arg>
-<arg>json=&amp;{payload}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220713 22:24:36.581" level="INFO">POST Request : url=http://localhost:3000/usuarios 
- path_url=/usuarios 
- headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '112', 'Content-Type': 'application/json'} 
- body=b'{"nome": "Eileen Mann", "email": "aliciacarroll@example.net", "password": "4(0@(RwJzd", "administrador": "true"}' 
- </msg>
-<msg timestamp="20220713 22:24:36.581" level="INFO">POST Response : url=http://localhost:3000/usuarios 
- status=201, reason=Created 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '57b779c0-0537-46a1-9be0-9fb7e6b67d24', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Date': 'Thu, 14 Jul 2022 01:24:36 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={
-    "message": "Cadastro realizado com sucesso",
-    "_id": "QQ4RWdbSNBjHET4G"
-} 
- </msg>
-<msg timestamp="20220713 22:24:36.581" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.563" endtime="20220713 22:24:36.581"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.582" endtime="20220713 22:24:36.584"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.585" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.584" endtime="20220713 22:24:36.585"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.561" endtime="20220713 22:24:36.585"/>
-</kw>
-<kw name="DELETE Endpoint /usuarios" library="usuarios_keywords">
 <kw name="DELETE On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>serverest</arg>
-<arg>/usuarios/${response.json()["_id"]}</arg>
+<arg>/carrinhos/cancelar-compra</arg>
+<arg>headers=${header}</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<msg timestamp="20220713 22:24:36.603" level="INFO">DELETE Request : url=http://localhost:3000/usuarios/QQ4RWdbSNBjHET4G 
- path_url=/usuarios/QQ4RWdbSNBjHET4G 
- headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+<msg timestamp="20220714 03:48:58.459" level="INFO">DELETE Request : url=http://localhost:3000/carrinhos/cancelar-compra 
+ path_url=/carrinhos/cancelar-compra 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E', 'Content-Type': 'application/json', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220713 22:24:36.603" level="INFO">DELETE Response : url=http://localhost:3000/usuarios/QQ4RWdbSNBjHET4G 
+<msg timestamp="20220714 03:48:58.459" level="INFO">DELETE Response : url=http://localhost:3000/carrinhos/cancelar-compra 
  status=200, reason=OK 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'f4fc498d-4970-4cf4-ba1b-fa955a90e7ae', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Date': 'Thu, 14 Jul 2022 01:24:36 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '52bc25b3-f998-46dd-a5b3-72ef7ff9b134', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '86', 'Date': 'Thu, 14 Jul 2022 06:48:58 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={
-    "message": "Registro excluído com sucesso"
+    "message": "Registro excluído com sucesso. Estoque dos produtos reabastecido"
 } 
  </msg>
-<msg timestamp="20220713 22:24:36.604" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.587" endtime="20220713 22:24:36.604"/>
+<msg timestamp="20220714 03:48:58.459" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.423" endtime="20220714 03:48:58.459"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.604" endtime="20220713 22:24:36.608"/>
+<status status="PASS" starttime="20220714 03:48:58.459" endtime="20220714 03:48:58.464"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.609" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.608" endtime="20220713 22:24:36.609"/>
+<msg timestamp="20220714 03:48:58.465" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.464" endtime="20220714 03:48:58.466"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.586" endtime="20220713 22:24:36.610"/>
+<status status="PASS" starttime="20220714 03:48:58.422" endtime="20220714 03:48:58.466"/>
 </kw>
 <kw name="Validar Status Code &quot;200&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
 <kw name="Should Be True" library="BuiltIn">
 <arg>${response.status_code} == ${statuscode}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20220713 22:24:36.610" endtime="20220713 22:24:36.613"/>
+<status status="PASS" starttime="20220714 03:48:58.467" endtime="20220714 03:48:58.468"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.610" endtime="20220713 22:24:36.613"/>
+<status status="PASS" starttime="20220714 03:48:58.466" endtime="20220714 03:48:58.469"/>
 </kw>
-<tag>DELETE</tag>
-<status status="PASS" starttime="20220713 22:24:36.551" endtime="20220713 22:24:36.617"/>
+<tag>EXCLUIRCARRINHO</tag>
+<status status="PASS" starttime="20220714 03:48:58.383" endtime="20220714 03:48:58.469"/>
 </test>
-<test id="s1-t6" name="Cenario: Post Criar Usuario de Massa Dinamica 201" line="41">
-<kw name="Criar Dados Usuario Valido" library="dynamic">
-<kw name="Name" library="FakerLibrary">
-<var>${nome}</var>
-<doc>:example 'John Doe'</doc>
-<msg timestamp="20220713 22:24:36.651" level="INFO">${nome} = Scott Cook</msg>
-<status status="PASS" starttime="20220713 22:24:36.650" endtime="20220713 22:24:36.651"/>
-</kw>
-<kw name="Email" library="FakerLibrary">
-<var>${email}</var>
-<msg timestamp="20220713 22:24:36.652" level="INFO">${email} = narmstrong@example.net</msg>
-<status status="PASS" starttime="20220713 22:24:36.651" endtime="20220713 22:24:36.652"/>
-</kw>
-<kw name="Password" library="FakerLibrary">
-<var>${senha}</var>
-<doc>Generate a random password of the specified ``length``.</doc>
-<msg timestamp="20220713 22:24:36.653" level="INFO">${senha} = I^0UOHe%cj</msg>
-<status status="PASS" starttime="20220713 22:24:36.652" endtime="20220713 22:24:36.653"/>
-</kw>
+<test id="s1-t4" name="Cenario: DELETE Compra Concluida" line="26">
+<kw name="Fazer Login e Armazenar Token" library="login_keywords">
+<kw name="POST Endpoint /login" library="login_keywords">
 <kw name="Create Dictionary" library="BuiltIn">
-<var>${payload}</var>
-<arg>nome=${nome}</arg>
-<arg>email=${email}</arg>
-<arg>password=${senha}</arg>
-<arg>administrador=true</arg>
+<var>&amp;{payload}</var>
+<arg>email=${email_para_login}</arg>
+<arg>password=${password_para_login}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220713 22:24:36.654" level="INFO">${payload} = {'nome': 'Scott Cook', 'email': 'narmstrong@example.net', 'password': 'I^0UOHe%cj', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.653" endtime="20220713 22:24:36.655"/>
+<msg timestamp="20220714 03:48:58.508" level="INFO">&amp;{payload} = { email=fulano@qa.com | password=teste }</msg>
+<status status="PASS" starttime="20220714 03:48:58.507" endtime="20220714 03:48:58.508"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.655" endtime="20220713 22:24:36.660"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.661" level="INFO">${payload} = {'nome': 'Scott Cook', 'email': 'narmstrong@example.net', 'password': 'I^0UOHe%cj', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.660" endtime="20220713 22:24:36.661"/>
-</kw>
-<status status="PASS" starttime="20220713 22:24:36.649" endtime="20220713 22:24:36.661"/>
-</kw>
-<kw name="POST Endpoint /usuarios" library="usuarios_keywords">
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>serverest</arg>
-<arg>/usuarios</arg>
-<arg>json=&amp;{payload}</arg>
+<arg>/login</arg>
+<arg>data=&amp;{payload}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220713 22:24:36.671" level="INFO">POST Request : url=http://localhost:3000/usuarios 
- path_url=/usuarios 
- headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '108', 'Content-Type': 'application/json'} 
- body=b'{"nome": "Scott Cook", "email": "narmstrong@example.net", "password": "I^0UOHe%cj", "administrador": "true"}' 
+<msg timestamp="20220714 03:48:58.518" level="INFO">POST Request : url=http://localhost:3000/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '36', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=email=fulano%40qa.com&amp;password=teste 
  </msg>
-<msg timestamp="20220713 22:24:36.672" level="INFO">POST Response : url=http://localhost:3000/usuarios 
- status=201, reason=Created 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '04ff1190-812e-44d6-b4b1-7b2f35199609', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Date': 'Thu, 14 Jul 2022 01:24:36 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+<msg timestamp="20220714 03:48:58.518" level="INFO">POST Response : url=http://localhost:3000/login 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '3f05a995-4802-41ef-9301-06247db7aaff', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '265', 'Date': 'Thu, 14 Jul 2022 06:48:58 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={
-    "message": "Cadastro realizado com sucesso",
-    "_id": "XpXXFgTNB41VPLFW"
+    "message": "Login realizado com sucesso",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E"
 } 
  </msg>
-<msg timestamp="20220713 22:24:36.672" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.662" endtime="20220713 22:24:36.672"/>
+<msg timestamp="20220714 03:48:58.518" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.508" endtime="20220714 03:48:58.518"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.672" endtime="20220713 22:24:36.674"/>
+<status status="PASS" starttime="20220714 03:48:58.518" endtime="20220714 03:48:58.520"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.675" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.674" endtime="20220713 22:24:36.675"/>
+<msg timestamp="20220714 03:48:58.521" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.520" endtime="20220714 03:48:58.521"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.662" endtime="20220713 22:24:36.675"/>
+<status status="PASS" starttime="20220714 03:48:58.471" endtime="20220714 03:48:58.521"/>
 </kw>
-<kw name="Validar Status Code &quot;201&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
+<kw name="Validar Ter Logado" library="login_keywords">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response.json()["message"]}</arg>
+<arg>Login realizado com sucesso</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220714 03:48:58.521" endtime="20220714 03:48:58.522"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${response.json()["authorization"]}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220714 03:48:58.522" level="INFO">Length is 192</msg>
+<status status="PASS" starttime="20220714 03:48:58.522" endtime="20220714 03:48:58.522"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.521" endtime="20220714 03:48:58.522"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${token_auth}</var>
+<arg>${response.json()["authorization"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220714 03:48:58.523" level="INFO">${token_auth} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E</msg>
+<status status="PASS" starttime="20220714 03:48:58.522" endtime="20220714 03:48:58.523"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Token Salvo:${token_auth}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 03:48:58.523" endtime="20220714 03:48:58.524"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${token_auth}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220714 03:48:58.525" level="INFO">${token_auth} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E</msg>
+<status status="PASS" starttime="20220714 03:48:58.524" endtime="20220714 03:48:58.525"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.470" endtime="20220714 03:48:58.525"/>
+</kw>
+<kw name="DELETE Endpoint /carrinhos/concluir-compra" library="carrinho_keywords">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{header}</var>
+<arg>Authorization=${token_auth}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220714 03:48:58.527" level="INFO">&amp;{header} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfI...</msg>
+<status status="PASS" starttime="20220714 03:48:58.526" endtime="20220714 03:48:58.527"/>
+</kw>
+<kw name="DELETE On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/carrinhos/concluir-compra</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<msg timestamp="20220714 03:48:58.535" level="INFO">DELETE Request : url=http://localhost:3000/carrinhos/concluir-compra 
+ path_url=/carrinhos/concluir-compra 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20220714 03:48:58.535" level="INFO">DELETE Response : url=http://localhost:3000/carrinhos/concluir-compra 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'f2487ff9-b5c2-451c-8bd3-6e9ce6d822bb', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '68', 'Date': 'Thu, 14 Jul 2022 06:48:58 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+    "message": "Não foi encontrado carrinho para esse usuário"
+} 
+ </msg>
+<msg timestamp="20220714 03:48:58.535" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.527" endtime="20220714 03:48:58.535"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 03:48:58.535" endtime="20220714 03:48:58.537"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220714 03:48:58.538" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.537" endtime="20220714 03:48:58.538"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.525" endtime="20220714 03:48:58.538"/>
+</kw>
+<kw name="Validar Status Code &quot;200&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
 <kw name="Should Be True" library="BuiltIn">
 <arg>${response.status_code} == ${statuscode}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20220713 22:24:36.677" endtime="20220713 22:24:36.679"/>
+<status status="PASS" starttime="20220714 03:48:58.539" endtime="20220714 03:48:58.539"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.676" endtime="20220713 22:24:36.679"/>
+<status status="PASS" starttime="20220714 03:48:58.538" endtime="20220714 03:48:58.539"/>
 </kw>
-<tag>POSTUSUARIODINAMICO</tag>
-<status status="PASS" starttime="20220713 22:24:36.626" endtime="20220713 22:24:36.680"/>
+<tag>COMPRACONCLUIDA</tag>
+<status status="PASS" starttime="20220714 03:48:58.470" endtime="20220714 03:48:58.540"/>
 </test>
-<test id="s1-t7" name="Cenario: POST Criar Usuario De Massa Estatica 201" line="46">
-<kw name="Pegar Dados Usuario Estatico Valido" library="usuarios_keywords">
+<test id="s1-t5" name="Cenario: POST Criar Carrinho" line="32">
+<kw name="Fazer Login e Armazenar Token" library="login_keywords">
+<kw name="POST Endpoint /login" library="login_keywords">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{payload}</var>
+<arg>email=${email_para_login}</arg>
+<arg>password=${password_para_login}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220714 03:48:58.542" level="INFO">&amp;{payload} = { email=fulano@qa.com | password=teste }</msg>
+<status status="PASS" starttime="20220714 03:48:58.542" endtime="20220714 03:48:58.542"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/login</arg>
+<arg>data=&amp;{payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220714 03:48:58.553" level="INFO">POST Request : url=http://localhost:3000/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '36', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=email=fulano%40qa.com&amp;password=teste 
+ </msg>
+<msg timestamp="20220714 03:48:58.553" level="INFO">POST Response : url=http://localhost:3000/login 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '3a70ee65-1255-4ca7-b664-27491a320e97', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '265', 'Date': 'Thu, 14 Jul 2022 06:48:58 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+    "message": "Login realizado com sucesso",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E"
+} 
+ </msg>
+<msg timestamp="20220714 03:48:58.553" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.543" endtime="20220714 03:48:58.553"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 03:48:58.554" endtime="20220714 03:48:58.559"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220714 03:48:58.561" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.560" endtime="20220714 03:48:58.561"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.541" endtime="20220714 03:48:58.561"/>
+</kw>
+<kw name="Validar Ter Logado" library="login_keywords">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response.json()["message"]}</arg>
+<arg>Login realizado com sucesso</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220714 03:48:58.562" endtime="20220714 03:48:58.565"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${response.json()["authorization"]}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220714 03:48:58.567" level="INFO">Length is 192</msg>
+<status status="PASS" starttime="20220714 03:48:58.565" endtime="20220714 03:48:58.567"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.561" endtime="20220714 03:48:58.567"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${token_auth}</var>
+<arg>${response.json()["authorization"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220714 03:48:58.568" level="INFO">${token_auth} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E</msg>
+<status status="PASS" starttime="20220714 03:48:58.567" endtime="20220714 03:48:58.568"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Token Salvo:${token_auth}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 03:48:58.568" endtime="20220714 03:48:58.569"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${token_auth}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220714 03:48:58.570" level="INFO">${token_auth} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E</msg>
+<status status="PASS" starttime="20220714 03:48:58.569" endtime="20220714 03:48:58.570"/>
+</kw>
+<status status="PASS" starttime="20220714 03:48:58.541" endtime="20220714 03:48:58.570"/>
+</kw>
+<kw name="POST Endpoint /carrinhos" library="carrinho_keywords">
+<kw name="Criando Carrinho" library="carrinho_keywords">
 <kw name="Importar JSON Estatico" library="common">
 <var>${json}</var>
-<arg>json_usuario_ex.json</arg>
+<arg>json_carrinho.json</arg>
 <kw name="Get File" library="OperatingSystem">
 <var>${arquivo}</var>
 <arg>${EXECDIR}/support/fixtures/static/${nome_arquivo}</arg>
 <doc>Returns the contents of a specified file.</doc>
-<msg timestamp="20220713 22:24:36.683" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\joao_\Documents\SPRINT_6\SPRINT_6_Joao_Paulo\ServeRest\support\fixtures\static\json_usuario_ex.json"&gt;C:\Users\joao_\Documents\SPRINT_6\SPRINT_6_Joao_Paulo\ServeRest\support\fixtures\static\json_usuario_ex.json&lt;/a&gt;'.</msg>
-<msg timestamp="20220713 22:24:36.683" level="INFO">${arquivo} = {
-    "user_valido":{
-        "nome":"JOAOPAULOBARROSO",
-        "email":"BARROSo@gmail.com.br",
-        "password":"teste1234",
-        "administrador":"true"
-    },
-
-    "user_invalido":{
-        "n...</msg>
-<status status="PASS" starttime="20220713 22:24:36.683" endtime="20220713 22:24:36.683"/>
+<msg timestamp="20220714 03:48:58.572" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\joao_\Documents\SPRINT_6\SPRINT_6_Joao_Paulo\ServeRest\support\fixtures\static\json_carrinho.json"&gt;C:\Users\joao_\Documents\SPRINT_6\SPRINT_6_Joao_Paulo\ServeRest\support\fixtures\static\json_carrinho.json&lt;/a&gt;'.</msg>
+<msg timestamp="20220714 03:48:58.581" level="INFO">${arquivo} = {
+  "produtos":[
+     {
+      "idProduto": "K6leHdftCeOJj8BJ",
+      "quantidade": 1
+     },
+     {"idProduto": "BeeJh5lz3k6kSIzA",
+      "quantidade": 2
+    }
+   ]
+ }</msg>
+<status status="PASS" starttime="20220714 03:48:58.572" endtime="20220714 03:48:58.581"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${data}</var>
 <arg>json.loads('''${arquivo}''')</arg>
 <arg>json</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20220713 22:24:36.684" level="INFO">${data} = {'user_valido': {'nome': 'JOAOPAULOBARROSO', 'email': 'BARROSo@gmail.com.br', 'password': 'teste1234', 'administrador': 'true'}, 'user_invalido': {'nome': 'invalido Tester', 'email': 'fulano@qa.com', ...</msg>
-<status status="PASS" starttime="20220713 22:24:36.684" endtime="20220713 22:24:36.684"/>
+<msg timestamp="20220714 03:48:58.582" level="INFO">${data} = {'produtos': [{'idProduto': 'K6leHdftCeOJj8BJ', 'quantidade': 1}, {'idProduto': 'BeeJh5lz3k6kSIzA', 'quantidade': 2}]}</msg>
+<status status="PASS" starttime="20220714 03:48:58.582" endtime="20220714 03:48:58.582"/>
 </kw>
-<msg timestamp="20220713 22:24:36.684" level="INFO">${json} = {'user_valido': {'nome': 'JOAOPAULOBARROSO', 'email': 'BARROSo@gmail.com.br', 'password': 'teste1234', 'administrador': 'true'}, 'user_invalido': {'nome': 'invalido Tester', 'email': 'fulano@qa.com', ...</msg>
-<status status="PASS" starttime="20220713 22:24:36.682" endtime="20220713 22:24:36.684"/>
+<msg timestamp="20220714 03:48:58.582" level="INFO">${json} = {'produtos': [{'idProduto': 'K6leHdftCeOJj8BJ', 'quantidade': 1}, {'idProduto': 'BeeJh5lz3k6kSIzA', 'quantidade': 2}]}</msg>
+<status status="PASS" starttime="20220714 03:48:58.571" endtime="20220714 03:48:58.582"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${payload}</var>
-<arg>${json["user_valido"]}</arg>
+<arg>${json}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220713 22:24:36.686" level="INFO">${payload} = {'nome': 'JOAOPAULOBARROSO', 'email': 'BARROSo@gmail.com.br', 'password': 'teste1234', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.684" endtime="20220713 22:24:36.686"/>
+<msg timestamp="20220714 03:48:58.582" level="INFO">${payload} = {'produtos': [{'idProduto': 'K6leHdftCeOJj8BJ', 'quantidade': 1}, {'idProduto': 'BeeJh5lz3k6kSIzA', 'quantidade': 2}]}</msg>
+<status status="PASS" starttime="20220714 03:48:58.582" endtime="20220714 03:48:58.582"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.687" level="INFO">${payload} = {'nome': 'JOAOPAULOBARROSO', 'email': 'BARROSo@gmail.com.br', 'password': 'teste1234', 'administrador': 'true'}</msg>
-<status status="PASS" starttime="20220713 22:24:36.686" endtime="20220713 22:24:36.687"/>
+<msg timestamp="20220714 03:48:58.583" level="INFO">${payload} = {'produtos': [{'idProduto': 'K6leHdftCeOJj8BJ', 'quantidade': 1}, {'idProduto': 'BeeJh5lz3k6kSIzA', 'quantidade': 2}]}</msg>
+<status status="PASS" starttime="20220714 03:48:58.583" endtime="20220714 03:48:58.583"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.682" endtime="20220713 22:24:36.687"/>
+<status status="PASS" starttime="20220714 03:48:58.571" endtime="20220714 03:48:58.583"/>
 </kw>
-<kw name="POST Endpoint /usuarios" library="usuarios_keywords">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{header}</var>
+<arg>Authorization=${token_auth}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220714 03:48:58.583" level="INFO">&amp;{header} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfI...</msg>
+<status status="PASS" starttime="20220714 03:48:58.583" endtime="20220714 03:48:58.583"/>
+</kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>serverest</arg>
-<arg>/usuarios</arg>
+<arg>/carrinhos</arg>
 <arg>json=&amp;{payload}</arg>
+<arg>headers=${header}</arg>
+<arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220713 22:24:36.704" level="INFO">POST Request : url=http://localhost:3000/usuarios 
- path_url=/usuarios 
- headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '111', 'Content-Type': 'application/json'} 
- body=b'{"nome": "JOAOPAULOBARROSO", "email": "BARROSo@gmail.com.br", "password": "teste1234", "administrador": "true"}' 
+<msg timestamp="20220714 03:48:58.598" level="INFO">POST Request : url=http://localhost:3000/carrinhos 
+ path_url=/carrinhos 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU3NzgxMzM4LCJleHAiOjE2NTc3ODE5Mzh9.7xp-ngSfq3H3NlPOfhB6J3IbdHmf8URMgfIT_MiuX9E', 'Content-Type': 'application/json', 'Content-Length': '118'} 
+ body=b'{"produtos": [{"idProduto": "K6leHdftCeOJj8BJ", "quantidade": 1}, {"idProduto": "BeeJh5lz3k6kSIzA", "quantidade": 2}]}' 
  </msg>
-<msg timestamp="20220713 22:24:36.704" level="INFO">POST Response : url=http://localhost:3000/usuarios 
+<msg timestamp="20220714 03:48:58.599" level="INFO">POST Response : url=http://localhost:3000/carrinhos 
  status=201, reason=Created 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '23ec3db3-d96d-4c53-b397-af131016fd26', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Date': 'Thu, 14 Jul 2022 01:24:36 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'd1068c7a-282f-40cf-8e82-7d9db81d84df', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Date': 'Thu, 14 Jul 2022 06:48:58 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={
     "message": "Cadastro realizado com sucesso",
-    "_id": "QhnLPs9xvwxa3gkW"
+    "_id": "VGKYZIJfcPRDUQx7"
 } 
  </msg>
-<msg timestamp="20220713 22:24:36.705" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.689" endtime="20220713 22:24:36.705"/>
+<msg timestamp="20220714 03:48:58.599" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.583" endtime="20220714 03:48:58.599"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Response: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220713 22:24:36.705" endtime="20220713 22:24:36.707"/>
+<status status="PASS" starttime="20220714 03:48:58.599" endtime="20220714 03:48:58.602"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220713 22:24:36.709" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20220713 22:24:36.708" endtime="20220713 22:24:36.709"/>
+<msg timestamp="20220714 03:48:58.603" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220714 03:48:58.603" endtime="20220714 03:48:58.603"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.688" endtime="20220713 22:24:36.710"/>
+<status status="PASS" starttime="20220714 03:48:58.571" endtime="20220714 03:48:58.603"/>
 </kw>
 <kw name="Validar Status Code &quot;201&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
 <kw name="Should Be True" library="BuiltIn">
 <arg>${response.status_code} == ${statuscode}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20220713 22:24:36.711" endtime="20220713 22:24:36.712"/>
+<status status="PASS" starttime="20220714 03:48:58.604" endtime="20220714 03:48:58.605"/>
 </kw>
-<status status="PASS" starttime="20220713 22:24:36.710" endtime="20220713 22:24:36.713"/>
+<status status="PASS" starttime="20220714 03:48:58.603" endtime="20220714 03:48:58.605"/>
 </kw>
-<tag>POSTCRIARUSUARIOESTATICO</tag>
-<status status="PASS" starttime="20220713 22:24:36.681" endtime="20220713 22:24:36.713"/>
+<tag>POSTCRIARCARRINHO</tag>
+<status status="PASS" starttime="20220714 03:48:58.541" endtime="20220714 03:48:58.605"/>
 </test>
-<doc>Arquivo de Testes para Endpoint /usuarios</doc>
-<status status="PASS" starttime="20220713 22:24:35.434" endtime="20220713 22:24:36.715"/>
+<doc>Arquivo de Testes para Endpoint /carrinhos</doc>
+<status status="PASS" starttime="20220714 03:48:57.296" endtime="20220714 03:48:58.606"/>
 </suite>
 <statistics>
 <total>
-<stat pass="7" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">DELETE</stat>
-<stat pass="1" fail="0" skip="0">GET</stat>
-<stat pass="1" fail="0" skip="0">GETBUSCARID</stat>
-<stat pass="1" fail="0" skip="0">POST</stat>
-<stat pass="1" fail="0" skip="0">POSTCRIARUSUARIOESTATICO</stat>
-<stat pass="1" fail="0" skip="0">POSTUSUARIODINAMICO</stat>
-<stat pass="1" fail="0" skip="0">PUT</stat>
+<stat pass="1" fail="0" skip="0">BUSCARCARRINHO</stat>
+<stat pass="1" fail="0" skip="0">BUSCARID</stat>
+<stat pass="1" fail="0" skip="0">COMPRACONCLUIDA</stat>
+<stat pass="1" fail="0" skip="0">EXCLUIRCARRINHO</stat>
+<stat pass="1" fail="0" skip="0">POSTCRIARCARRINHO</stat>
 </tag>
 <suite>
-<stat pass="7" fail="0" skip="0" id="s1" name="Usuario Tests">Usuario Tests</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="Carrinho Tests">Carrinho Tests</stat>
 </suite>
 </statistics>
 <errors>

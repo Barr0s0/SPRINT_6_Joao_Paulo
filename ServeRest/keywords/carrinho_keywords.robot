@@ -38,3 +38,4 @@ Criando Carrinho
     ${json}                     Importar JSON Estatico              json_carrinho.json
     ${payload}                  Set Variable                        ${json}
     Set Global Variable         ${payload}
+             
