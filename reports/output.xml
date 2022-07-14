@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220714 02:59:45.426" rpa="false" schemaversion="3">
+<suite id="s1" name="Consumir Library Python" source="C:\Users\joao_\Documents\SPRINT_6\SPRINT_6_Joao_Paulo\consumir_library_python.robot">
+<test id="s1-t1" name="Teste Library 1" line="6">
+<kw name="Get Endpoint Usuarios Tantas Vezes" library="library_teste">
+<var>${json}</var>
+<arg>${1}</arg>
+<msg timestamp="20220714 02:59:45.898" level="INFO">${json} = [{'quantidade': 70, 'usuarios': [{'nome': 'Alexandra Perez', 'email': 'jonesmary@example.com', 'password': 'zV1UUys!)J', 'administrador': 'true', '_id': '09DDotpxP3AqsRBF'}, {'nome': 'Fulano da Silva'...</msg>
+<status status="PASS" starttime="20220714 02:59:45.880" endtime="20220714 02:59:45.898"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${json}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 02:59:45.899" endtime="20220714 02:59:45.925"/>
+</kw>
+<status status="PASS" starttime="20220714 02:59:45.879" endtime="20220714 02:59:45.942"/>
+</test>
+<test id="s1-t2" name="Teste Library 2" line="10">
+<kw name="Pegar Quantidade De Usuarios Cadastrados" library="library_teste">
+<var>${users}</var>
+<msg timestamp="20220714 02:59:45.952" level="INFO">${users} = 70</msg>
+<status status="PASS" starttime="20220714 02:59:45.943" endtime="20220714 02:59:45.952"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${users}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 02:59:45.952" endtime="20220714 02:59:45.953"/>
+</kw>
+<status status="PASS" starttime="20220714 02:59:45.943" endtime="20220714 02:59:45.953"/>
+</test>
+<test id="s1-t3" name="Teste Library 3" line="14">
+<kw name="Pegar Quantidade De Produtos" library="library_teste">
+<var>${products}</var>
+<msg timestamp="20220714 02:59:45.963" level="INFO">${products} = 3</msg>
+<status status="PASS" starttime="20220714 02:59:45.955" endtime="20220714 02:59:45.963"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${products}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 02:59:45.964" endtime="20220714 02:59:45.964"/>
+</kw>
+<status status="PASS" starttime="20220714 02:59:45.954" endtime="20220714 02:59:45.965"/>
+</test>
+<test id="s1-t4" name="Teste Library 4" line="18">
+<kw name="Criar Usuarios" library="library_teste">
+<var>${teste}</var>
+<arg>${1}</arg>
+<msg timestamp="20220714 02:59:45.981" level="INFO">${teste} = [{'message': 'Cadastro realizado com sucesso', '_id': 'aVin3IuffRhXlLQk'}]</msg>
+<status status="PASS" starttime="20220714 02:59:45.966" endtime="20220714 02:59:45.982"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${teste}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220714 02:59:45.982" endtime="20220714 02:59:45.982"/>
+</kw>
+<status status="PASS" starttime="20220714 02:59:45.966" endtime="20220714 02:59:45.983"/>
+</test>
+<doc>Arquivo de Testes para Library PYTHON</doc>
+<status status="PASS" starttime="20220714 02:59:45.440" endtime="20220714 02:59:45.983"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Consumir Library Python">Consumir Library Python</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
