@@ -7,7 +7,7 @@
 - `Produtos`
 - `Carrinhos`
 
-## Liguagem
+## Linguagem
 
 - Python 3
 
@@ -21,9 +21,9 @@
 
 ## Libraries Utilizadas
 
--RequestsLibrary
--FakeLibrary
--JsonLibrary
+- RequestsLibrary
+- FakeLibrary
+- JsonLibrary
 
 ## Ferramentas Utilizadas
 
